@@ -34,7 +34,7 @@ public class UrlController {
 				+ "Paste your short link in the address bar after squeezer/ to be redirected to your destination\n\n";
 	}
 
-	@PostMapping("https://skweezit-server.herokuapp.com/skweez.it")
+	@PostMapping("/skweez.it")
 	public ResponseEntity<UrlResponseObject> addAndEncode(@Validated @RequestBody String originalUrl) {		
 		Url urlToAdd = new Url();
 		
@@ -50,7 +50,7 @@ public class UrlController {
 		return new ResponseEntity<>(new UrlResponseObject(originalUrl, shortenedUrl), HttpStatus.CREATED);
 	}
 
-	@GetMapping("/https://skweezit-server.herokuapp.com/{shortString}")
+	@GetMapping("/skweez.it/{shortString}")
 	public void getRedirect(HttpServletResponse httpServletResponse, @PathVariable String shortString)
 			throws IOException {
 		httpServletResponse.sendRedirect(urlService.getUrlById(new Decoder().decode(shortString)).getOriginalUrl());
