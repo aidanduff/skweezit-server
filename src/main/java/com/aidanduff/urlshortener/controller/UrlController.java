@@ -21,7 +21,7 @@ import com.aidanduff.urlshortener.service.UrlService;
 import com.aidanduff.urlshortener.util.Decoder;
 import com.aidanduff.urlshortener.util.Encoder;
 
-@CrossOrigin(origins = { "http://localhost:3000", "'https://skweezit.herokuapp.com"})
+@CrossOrigin(origins = { "http://localhost:3000", "https://skweezit.herokuapp.com"})
 @RestController
 public class UrlController {
 
