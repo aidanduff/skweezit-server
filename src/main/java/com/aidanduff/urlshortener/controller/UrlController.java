@@ -21,7 +21,7 @@ import com.aidanduff.urlshortener.service.UrlService;
 import com.aidanduff.urlshortener.util.Decoder;
 import com.aidanduff.urlshortener.util.Encoder;
 
-@CrossOrigin(origins = { "http://localhost:3000", "https://skweezit.herokuapp.com"})
+@CrossOrigin(origins = { "http://localhost:3000", "https://skweezit.herokuapp.com/home"})
 @RestController
 public class UrlController {
 
@@ -34,7 +34,7 @@ public class UrlController {
 				+ "Paste your short link in the address bar after squeezer/ to be redirected to your destination\n\n";
 	}
 
-	@PostMapping("/home")
+	@PostMapping("/skweez.it")
 	public ResponseEntity<UrlResponseObject> addAndEncode(@Validated @RequestBody String originalUrl) {		
 		Url urlToAdd = new Url();
 		
