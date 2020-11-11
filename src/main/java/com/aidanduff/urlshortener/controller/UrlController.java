@@ -50,7 +50,7 @@ public class UrlController {
 		return new ResponseEntity<>(new UrlResponseObject(originalUrl, shortenedUrl), HttpStatus.CREATED);
 	}
 
-	@GetMapping("/skweekz.it/{shortString}")
+	@GetMapping("/skweez.it/{shortString}")
 	public void getRedirect(HttpServletResponse httpServletResponse, @PathVariable String shortString)
 			throws IOException {
 		httpServletResponse.sendRedirect(urlService.getUrlById(new Decoder().decode(shortString)).getOriginalUrl());
